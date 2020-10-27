@@ -31,7 +31,7 @@ public class AppSecConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/", "/khongcoquyen").permitAll()
+        http.authorizeRequests().antMatchers("/", "/about").permitAll()
                 .and()
                 .authorizeRequests().antMatchers("/category/**").hasRole("ADMIN")
                 .and()
