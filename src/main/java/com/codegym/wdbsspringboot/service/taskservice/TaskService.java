@@ -32,4 +32,8 @@ public class TaskService implements ITaskService{
     public void remove(Long id) {
         taskRepository.deleteById(id);
     }
+
+    public TaskService(ITaskRepository repository) {
+        this.taskRepository = repository;
+    }
 }

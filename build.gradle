@@ -34,7 +34,12 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-    testImplementation 'io.projectreactor:reactor-test'
+
+    testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.0.RELEASE'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
     testImplementation 'org.springframework.security:spring-security-test'
 }
 
